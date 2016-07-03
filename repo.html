@@ -1,0 +1,24 @@
+<a href="#/user/{{ username }}">Back to list of repos</a>
+<br/><br/>
+
+
+<h3>Contributors</h3>
+
+<table class="table">
+	<thead>
+		<tr>		
+			<th>ID</th>
+			<th>Name</th>
+			<th>Image</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="c in contributors">
+			<td>{{ c.id }}</td>
+			<td>{{ c.login }}</td>
+			<td><img ng-src="{{ c.avatar_url }}" height="150px" width="150px"></td>
+		</tr>
+	</tbody>
+</table>
+
+

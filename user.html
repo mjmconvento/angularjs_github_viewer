@@ -1,0 +1,35 @@
+<a href="#/main">Back to username search</a>
+<br/><br/>
+
+<h4>Username: {{ user.login }}
+<br/>
+User ID:{{ user.id }}</h4>
+<br/>
+
+<h3>Repositories</h3>
+
+Sort By:
+<select ng-model="repoSortOrder">
+	<option value="+id">ID</option>
+	<option value="+name">Name</option>
+	<option value="+stargazers_count">Stars</option>
+</select>
+
+<div class="container">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Stargazers Count</th>
+			</tr>
+		</thead>
+			<tr ng-repeat="r in repos|orderBy:repoSortOrder">
+				<td>{{ r.id }}</td>
+				<td><a href="#/user/{{ user.login }}/{{ r.name }}">{{ r.name }}</a></td>
+				<td>{{ r.stargazers_count }}</td>
+			</tr>
+		<tbody>
+		</tbody>
+	</table>
+</div>
